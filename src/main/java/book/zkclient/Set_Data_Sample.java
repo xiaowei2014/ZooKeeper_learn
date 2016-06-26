@@ -1,0 +1,15 @@
+package book.zkclient;
+
+
+import com.github.zkclient.ZkClient;
+
+//ZkClient更新节点数据
+public class Set_Data_Sample {
+
+    public static void main(String[] args) throws Exception {
+    	String path = "/zk-book";
+    	ZkClient zkClient = new ZkClient("domain1.book.zookeeper:2181", 2000);
+        zkClient.createEphemeral(path, "1".getBytes());
+        zkClient.writeData(path, "1".getBytes());
+    }
+}
